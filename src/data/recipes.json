@@ -1,0 +1,26 @@
+[
+    {
+        "image": "../assets/images/thom-gai.jpg",
+        "alt": "Thom Gai",
+        "name": "Thom Gai",
+        "button": "View Recipe"
+    },
+    {
+        "image": "../assets/images/matcha-latte.jpg",
+        "alt": "Matcha Latte",
+        "name": "Matcha Latte",
+        "button": "View Recipe"
+    },
+    {
+        "image": "../assets/images/beef-noodles.jpg",
+        "alt": "Beef Noodles",
+        "name": "Beef Noodles",
+        "button": "View Recipe"
+    },
+    {
+        "image": "../assets/images/edamame-beans.jpg",
+        "alt": "Edamame Beans",
+        "name": "Edamame Beans",
+        "button": "View Recipe"
+    }
+]
