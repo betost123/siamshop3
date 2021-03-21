@@ -1,9 +1,6 @@
 import * as React from "react"
 import {Link} from 'gatsby'
 import styled from 'styled-components'
-import {FaBars} from 'react-icons/fa'
-import {menuData} from '../data/MenuData'
-import { Button } from "./Button"
 
 const Header = () => {
   return (
@@ -13,15 +10,6 @@ const Header = () => {
           <OrchidLogoIcon />
           <h2 style={{marginLeft: '1rem'}}>Siam Shop</h2>
         </NavLink>
-        <Bars />
-        <NavMenu>
-            {menuData.map((data, index) => (
-              <NavLink key={index} to={data.link}>{data.title}</NavLink>
-            ))}
-          <NavButton>
-            <Button round="true" to="/news">Läs mer</Button>
-          </NavButton>
-        </NavMenu>
       </Nav>
     </div>
   )
@@ -45,41 +33,6 @@ const NavLink = styled(Link)`
   text-decoration: none;
   height: 100%;
   margin-left: 1rem;
-`
-
-const Bars = styled(FaBars)`
-  display: none;
-  color: #fff;
-
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
-    font-size: 1.8rem;
-  }
-`
-
-const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
-  //margin-right: -48px;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`
-
-const NavButton = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: 24px;
-  margin-left: 1rem;
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
 `
 
 const OrchidLogoIcon = () => {

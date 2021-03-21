@@ -7,14 +7,16 @@ import OpeningHours from "../components/OpeningHours"
 import Recipes from "../components/Recipes"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <Hero />
-    <Recipes heading="Våra favoritrecept" />
-    <About />
-    <OpeningHours />
-  </Layout>
-)
+const IndexPage = () => {
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <Hero />
+      <Recipes heading="Våra favoritrecept" />
+      <About />
+      <OpeningHours />
+    </Layout>
+  )
+}
 
 export default IndexPage

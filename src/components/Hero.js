@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from './Button'
 import ThaiVideo from '../assets/videos/cuttingVideo.mp4'
 
 const Hero = () => {
@@ -13,7 +12,6 @@ const Hero = () => {
 				<SiamShopItems>
 					<SiamShopH1>Asiatiskt Livsmedel</SiamShopH1>
 					<SiamShopP>Ett brett sortiment med färska, direktimporterade, asiatiska grönsaker</SiamShopP>
-					<Button primary="true" big="true" round="true" to="/about">Läs mer</Button>
 				</SiamShopItems>
 			</SiamShopContent>
 		</SiamShopContainer>
