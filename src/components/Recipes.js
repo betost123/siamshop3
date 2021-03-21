@@ -2,43 +2,71 @@ import React from 'react'
 import styled from 'styled-components'
 import {useStaticQuery, graphql} from 'gatsby'
 import Img from 'gatsby-image'
-import { Button } from './Button'
 import {GiSpotedFlower} from 'react-icons/gi'
+import { RecipeDialog } from './RecipeDialog'
 
 const Recipes = ({ heading }) => {
 	const data = useStaticQuery(query)
+	const recipes = data.allRecipesJson.edges
+	const [recipeOneOpen, setRecipeOneOpen] = React.useState(false);
+	const [recipeTwoOpen, setRecipeTwoOpen] = React.useState(false);
+	const [recipeThreeOpen, setRecipeThreeOpen] = React.useState(false);
+	const [recipeFourOpen, setRecipeFourOpen] = React.useState(false);
 
 	const getRecipes = (data) => {
-		const recipesArray = [];
-		data.allRecipesJson.edges.forEach((element, index) => {
-			recipesArray.push(
-				<RecipeCard key={index}>
-					<RecipeImg
-						src={element.node.image.childImageSharp.fluid.src}
-						alt={element.node.alt}
-						fluid={element.node.image.childImageSharp.fluid}
-					/>
-					<RecipeInfo>
-						<TextWrap>
-							<GiSpotedFlower />
-							<RecipeTitle>
-								{element.node.name}
-							</RecipeTitle>
-						</TextWrap>
-						<Button
-							primary="true"
-							round="true"
-							to="/recipes"
-							css={`position: absolute; top: 420px; font-size: 14px;`}
-						>
-							{element.node.button}
-						</Button>
-					</RecipeInfo>
-				</RecipeCard>
-			)
-		});
+		const recipeOne = recipes[0]
+		const recipeTwo = recipes[1]
+		const recipeThree = recipes[2]
+		const recipeFour = recipes[3]
 
-		return recipesArray;
+		return (
+			<>
+				<RecipeCardComponent
+					recipeName={recipeOne.node.name}
+					open={recipeOneOpen}
+					ingredients={["180g kycklingfilé", "1 salladslök", "3st tunt skivade galanga", "3 limeblad", "1st cintrongräs", "6 dl kokosmjölk", "0.7 dl fisksås", "0.7 dl pressad citron", "3 msk socker", "1 dl koriander", "1 msk chiliolja"]}
+					onClick={() => setRecipeOneOpen(true)}
+					onClose={() => setRecipeOneOpen(false)}
+					alt={recipeOne.node.alt}
+					fluid={recipeOne.node.image.childImageSharp.fluid}
+					src={recipeOne.node.image.childImageSharp.fluid.src}
+					instructions={recipeOne.node.instructions}
+				/>
+				<RecipeCardComponent
+					recipeName={recipeTwo.node.name}
+					open={recipeTwoOpen}
+					ingredients={["2 dl mjölk", "0.5 dl vatten", "1 tsk matchapulver", "1 msk honung"]}
+					onClick={() => setRecipeTwoOpen(true)}
+					onClose={() => setRecipeTwoOpen(false)}
+					alt={recipeTwo.node.alt}
+					fluid={recipeTwo.node.image.childImageSharp.fluid}
+					src={recipeTwo.node.image.childImageSharp.fluid.src}
+					instructions={recipeTwo.node.instructions}
+				/>
+				<RecipeCardComponent
+					recipeName={recipeThree.node.name}
+					open={recipeThreeOpen}
+					ingredients={["250g äggnudlar", "1 tsk seasmolja", "300g biff", "2 msk majsmjöl", "salt & peppar", "olja", "1 msk ingefära", "3 vitlöksklyftor", "90 ml soja", "6 msk socker", "1 chili", "4 salladslökar"]}
+					onClick={() => setRecipeThreeOpen(true)}
+					onClose={() => setRecipeThreeOpen(false)}
+					alt={recipeThree.node.alt}
+					fluid={recipeThree.node.image.childImageSharp.fluid}
+					src={recipeThree.node.image.childImageSharp.fluid.src}
+					instructions={recipeThree.node.instructions}
+				/>
+				<RecipeCardComponent
+					recipeName={recipeFour.node.name}
+					open={recipeFourOpen}
+					ingredients={["250g edamamebönor", "2 vitlöksklyftor", "1 msk ingefära", "2 tsk chili", "1 msk sesamolja", "2 tsk flingsalt"]}
+					onClick={() => setRecipeFourOpen(true)}
+					onClose={() => setRecipeFourOpen(false)}
+					alt={recipeFour.node.alt}
+					fluid={recipeFour.node.image.childImageSharp.fluid}
+					src={recipeFour.node.image.childImageSharp.fluid.src}
+					instructions={recipeFour.node.instructions}
+				/>
+			</>
+		);
 	}
 
 	return (
@@ -54,6 +82,44 @@ const Recipes = ({ heading }) => {
 }
 
 export default Recipes
+
+const RecipeCardComponent = ({recipeName, open, ingredients, onClick, onClose, alt, fluid, instructions, src}) => {
+	return (
+		<>
+			<RecipeCard>
+				<RecipeImg
+					src={src}
+					alt={alt}
+					fluid={fluid}
+				/>
+				<RecipeInfo>
+					<TextWrap>
+						<GiSpotedFlower />
+						<RecipeTitle>
+							{recipeName}
+						</RecipeTitle>
+					</TextWrap>
+					<div
+						onKeyDown={onClick}
+						role="button"
+						tabIndex={0}
+						onClick={onClick}
+						css={`position: absolute; top: 420px; font-size: 14px; background: #AB2C69; border-radius: 50px; padding: 10px 32px; &:hover {transform: translateY(-2px); background: rgba(171, 44, 105, 0.85);}`}
+					>
+						Visa recept
+					</div>
+				</RecipeInfo>
+			</RecipeCard>
+			<RecipeDialog
+				open={open}
+				handleClose={onClose}
+				title={recipeName}
+				ingredients={ingredients}
+				instructions={instructions}
+			/>
+	</>
+	)
+}
 
 const RecipesContainer = styled.div`
 	min-height: 100vh;
@@ -132,12 +198,11 @@ const RecipeTitle = styled.div`
 
 const query = graphql`
 query RecipesQuery {
-  allRecipesJson {
+	allRecipesJson {
     edges {
       node {
         alt
         button
-        name
         image {
           childImageSharp {
             fluid {
@@ -145,6 +210,9 @@ query RecipesQuery {
             }
           }
         }
+        instructions
+        ingredients
+        name
       }
     }
   }

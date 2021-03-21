@@ -3,24 +3,32 @@
         "image": "../assets/images/thom-gai.jpg",
         "alt": "Thom Gai",
         "name": "Thom Gai",
-        "button": "View Recipe"
+        "button": "View Recipe",
+        "ingredients": ["180g kycklingfilé", "1 salladslök", "3st galanga", "3 limeblad", "1st cintrongräs", "6 dl kokosmjölk", "6 dl kycklingbuljon", "0.7 dl fisksås", "0.7 dl pressad citron", "3 msk socker", "1 dl koriander", "1 msk chiliolja"],
+        "instructions": "Skär kycklingen i små bitar. Skiva salladslök, galanga, limeblad och koriander. Koka upp kycklingbuljongen med limeblad, galnag och hälften av salldslöken. Addera koriander, kyckling, fisksås och socker och låt koka tills kycklingen är färdig. Addera kokosmjölken och låt koka ca 6 minuter. Vid servering, toppa med chili och salladslök."
     },
     {
         "image": "../assets/images/matcha-latte.jpg",
         "alt": "Matcha Latte",
         "name": "Matcha Latte",
-        "button": "View Recipe"
+        "button": "View Recipe",
+        "ingredients": ["2 dl mjölk", "0.5 dl vatten", "1 tsk matchapulver", "1 msk honung"],
+        "instructions": "Koka upp vattnet och blanda i matchapulvret i din kopp. Värm sedan mjölken och häll i koppen, Smaksätt med honung."
     },
     {
         "image": "../assets/images/beef-noodles.jpg",
         "alt": "Beef Noodles",
         "name": "Beef Noodles",
-        "button": "View Recipe"
+        "button": "View Recipe",
+        "ingredients": ["250g äggnudlar", "1 tsk seasmolja", "300g biff", "2 msk majsmjöl", "salt & peppar", "olja", "1 msk ingefära", "3 vitlöksklyftor", "90 ml soja", "6 msk socker", "1 chili", "4 salladslökar"],
+        "instructions": "Koka först upp nudlarna och förvara dem sedan i en skål vid sidan. Blanda med seamoljan så nudlarna inte fastanr i varandra. Lägg biff, majsmjöl, salt och peppar i en skål och rör om. Stek köttet i olja tills mörkt och krispigt, ta sedan ur pannan och låt vila vid sidan om. Stek ingefära, chili och vitlök 2-3 minuter. Blanda sedan i alltsammans tills allt är mixat. Redo att servera!"
     },
     {
         "image": "../assets/images/edamame-beans.jpg",
         "alt": "Edamame Beans",
         "name": "Edamame Beans",
-        "button": "View Recipe"
+        "button": "View Recipe",
+        "ingredients": ["250g edamamebönor", "2 vitlöksklyftor", "1 msk ingefära", "2 tsk chili", "1 msk sesamolja", "2 tsk flingsalt"],
+        "instructions": "Koka bönorna i ca 3 minuter. Stek pressad vitlök, chili, ingefära i oljorna. Tillsätt bönorna och krydda med flingsalt. Redo att servera!"
     }
 ]
