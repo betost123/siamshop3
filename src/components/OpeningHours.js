@@ -1,19 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
 import {FiClock} from 'react-icons/fi'
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 const OpeningHours = () => {
+const data = useStaticQuery(query)
+
 	return (
 		<OpeningHoursContainer>
 			<Heading>Öppettider</Heading>
 			<Wrapper>
 				<OpeningHoursBox>
 					<Icon />
-					<Title>Öppettider</Title>
 					<Description>
-						text
+						mån-fre: 10.00-18.00
+					</Description>
+					<Description>
+						lör: 10.00-15.00
+					</Description>
+					<Description>
+						sön: 11.00-15.00
 					</Description>
 				</OpeningHoursBox>
+				{
+					data.allFile.edges.map((image, index) => (
+						<OpenImage key={index} fluid={image.node.childImageSharp.fluid} src={image.node.childImageSharp.fluid.src} />
+					))
+				}
 			</Wrapper>
 		</OpeningHoursContainer>
 	)
@@ -59,5 +73,30 @@ const OpeningHoursBox = styled.div`
 	width: 100%;
 	padding: 2rem;
 `
-const Title = styled.div``
-const Description = styled.div``
+const Description = styled.div`
+	font-size: clamp(1rem, 2.5vw, 1.5rem);
+	margin-bottom: 0.5rem;
+`
+
+const OpenImage = styled(Img)`
+	height: 100%;
+	max-width: 100%;
+	position: relative;
+	border-radius: 1rem;
+	filter: brightness(70%);
+`
+
+const query = graphql`
+query OpenQuery {
+  allFile(filter: {ext: {regex: "/(jpg)|(png)/"}, name: {in: ["open-bananas", "open-salad", "open-buddah"]}}) {
+    edges {
+      node {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  }
+}`
