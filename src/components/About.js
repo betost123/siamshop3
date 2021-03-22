@@ -33,7 +33,7 @@ function About() {
 							Vi säljer varor främst från östasien. Ni hittar allt från godis, till soja, kryddor och fisk.
 							Vi har även allt du behöver för att göra sushi, inklusive rullmattor och riskokare. Vi erbjuder
 							ett mindre sortiment av dekorationer och tillbehör från asien, som ätpinnar, porslin och tavlor.
-							Under säsong finns även frön om du vill så dina råvaror själv. Färsk mango från Pakistam köps in
+							Under säsong finns även frön om du vill så dina råvaror själv. Färsk mango från Pakistan köps in
 							under sommaren, och brukar vara väldigt populärt. Ibland lyckas vi även få in Durian, den så kallade
 							"stinky fruit", och denna behöver man i regel förboka om man är intresserad.
 						</p>

@@ -80,6 +80,7 @@ const Description = styled.div`
 
 const OpenImage = styled(Img)`
 	height: 100%;
+	min-height: 350px;
 	max-width: 100%;
 	position: relative;
 	border-radius: 1rem;

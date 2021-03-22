@@ -9,7 +9,7 @@ const Footer = () => {
 			<FooterLinksWrapper>
 				<FooterDescription>
 					<h1>Siam Shop</h1>
-					<p>Välkommen in till oss! Ett asiatiskt hjärta mitt i Linköping.</p>
+					<p>Välkommen in till oss, ett asiatiskt hjärta mitt i Linköping.</p>
 				</FooterDescription>
 				<FooterLinkItems>
 					<FooterLinkTitle>
@@ -89,7 +89,7 @@ const FooterLink = styled.p`
 	text-decoration: none;
 	margin-bottom: 0.5rem;
 	font-size: 14px;
-
+	color: #E9E8E8;
 `
 const FacebookLink = styled(Link)`
 	text-decoration: none;
