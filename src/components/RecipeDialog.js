@@ -21,6 +21,7 @@ export const RecipeDialog = ({open, handleClose, title, ingredients, instruction
 			onClose={handleClose}
 			aria-labelledby="alert-dialog-slide-title"
 			aria-describedby="alert-dialog-slide-description"
+			style={{borderRadius: '2rem'}}
 		>
 			<DialogTitle id="alert-dialog-slide-title"><h2>{title}</h2></DialogTitle>
 			<DialogContent>
@@ -38,10 +39,16 @@ export const RecipeDialog = ({open, handleClose, title, ingredients, instruction
 					</p>
 				</DialogContentText>
 				<DialogActions>
-						<button onClick={handleClose}>
-							Close
-						</button>
-					</DialogActions>
+					<div
+						onKeyDown={handleClose}
+						role="button"
+						tabIndex={0}
+						onClick={handleClose}
+						css={`font-size: 14px; background: #E5D4DF; border-radius: 50px; padding: 10px 32px; &:hover {transform: translateY(-2px); background: #DECCD7;}`}
+					>
+						Stäng
+					</div>
+				</DialogActions>
 			</DialogContent>
 		</Dialog>
 	)
