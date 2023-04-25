@@ -16,7 +16,7 @@ const Footer = () => {
 						Kontakt
 					</FooterLinkTitle>
 					<FooterLink>013 - 12 12 13</FooterLink>
-					<Mail href="mailto:info@siamshop.biz">info@siamshop.biz</Mail>
+					<Mail href="mailto:hello@siamshop.se">hello@siamshop.se</Mail>
 					<FacebookLink to="https://sv-se.facebook.com/SiamShopLinkoping/">Facebook</FacebookLink>
 				</FooterLinkItems>
 			</FooterLinksWrapper>
